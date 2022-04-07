@@ -2,7 +2,7 @@
 @use "../base/typography" as type;
 
 :root {
-  --text-opacity-timing: 2s;
+  --text-opacity-timing: 0.5s;
 }
 
 body {
@@ -14,36 +14,25 @@ body {
   font-family: "Nunito", sans-serif;
 
   .container {
+    width: 30%;
+    background: white;
+    border-radius: 10px;
+
     .inner {
       background: rgb(7, 218, 165);
       padding: 1em;
       border-radius: 10px;
-      width: 250px;
+      width: 100%;
       color: white;
 
       //here it is.
-      clip-path: circle(10% at 91% 20%);
+      clip-path: inset(0% 0% 0% 100%);
       transition: all 0.5s ease-in-out;
       cursor: pointer;
 
       &:hover {
         clip-path: circle(75%);
         background: #00b6ff;
-      }
-
-      .i {
-        float: right;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: bold;
-        position: relative;
-        margin-right: 1.5%;
-
-        transition: opacity 0.5s;
-      }
-
-      &:hover .i {
-        opacity: 0;
       }
 
       h1 {
@@ -67,8 +56,8 @@ body {
       }
     }
 
-    // &:hover .inner {
-    //   clip-path: circle(75%);
-    // }
+    &:hover .inner {
+      clip-path: inset(0% 0% 0% 0%);
+    }
   }
 }
