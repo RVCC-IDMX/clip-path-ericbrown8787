@@ -1,6 +1,10 @@
 /* home */
 @use "../base/typography" as type;
 
+:root {
+  --text-opacity-timing: 2s;
+}
+
 body {
   background: #dcf5ff;
   height: 100vh;
@@ -10,135 +14,61 @@ body {
   font-family: "Nunito", sans-serif;
 
   .container {
-    width: 30%;
-    background-color: white;
-    border-radius: 10px;
-
     .inner {
-      background: #00b6ff;
+      background: rgb(7, 218, 165);
       padding: 1em;
       border-radius: 10px;
-      width: 100%;
+      width: 250px;
       color: white;
 
       //here it is.
-      clip-path: circle(10% at 0% 0%);
-      transition: clip-path 0.5s ease-in-out;
+      clip-path: circle(10% at 91% 20%);
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        clip-path: circle(75%);
+        background: #00b6ff;
+      }
+
+      .i {
+        float: right;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        position: relative;
+        margin-right: 1.5%;
+
+        transition: opacity 0.5s;
+      }
+
+      &:hover .i {
+        opacity: 0;
+      }
 
       h1 {
         color: white;
+        opacity: 0;
         font-size: 2rem;
         padding-block: 0.5em;
+        transition: opacity var(--text-opacity-timing);
       }
 
       p {
         color: white;
+        opacity: 0;
         font-size: 0.8rem;
+        transition: opacity var(--text-opacity-timing);
+      }
+
+      &:hover h1,
+      &:hover p {
+        opacity: 100%;
       }
     }
 
-    &:hover .inner {
-      clip-path: circle(75%);
-    }
+    // &:hover .inner {
+    //   clip-path: circle(75%);
+    // }
   }
 }
-// body {
-//   background: magenta;
-//   height: 100vh;
-//   display: grid;
-//   justify-items: center;
-//   align-items: center;
-//   font-family: "Nunito", sans-serif;
-// }
-
-// .container {
-//   width: 30%;
-//   background: lightcoral;
-//   border-radius: 10px;
-//   &:hover .inner {
-//     clip-path: circle(75%);
-//     background: lightcyan;
-//   }
-//   .inner {
-//     background: indigo;body {
-//   background: magenta;
-//   height: 100vh;
-//   display: grid;
-//   justify-items: center;
-//   align-items: center;
-//   font-family: "Nunito", sans-serif;
-// }
-
-// .container {
-//   width: 30%;
-//   background: lightcoral;
-//   border-radius: 10px;
-//   &:hover .inner {
-//     clip-path: circle(75%);
-//     background: lightcyan;
-//   }
-//   .inner {
-//     background: indigo;
-//     padding: 1em;
-//     border-radius: 10px;
-//     width: calc(100% - 2em);
-//     clip-path: inset(100% 100% 100% 100%);
-//     transition: all 0.5s ease-in-out;
-//     cursor: pointer;
-//     &:hover {
-//       clip-path: circle(75%);
-//       background: salmon;
-//     }
-
-//     // span {
-//     //   float: right;
-//     //   color: white;
-//     //   font-weight: bold;
-//     //   transition: color 0.5s;
-//     //   position: relative;
-//     //   margin-right: 4%;
-//     // }
-
-//     // &:hover span {
-//     //   color: rgb(255, 255, 255, 0);
-//     // }
-
-//     h1 {
-//       color: white;
-//       font-size: 4rem;
-//     }
-//     p {
-//       color: white;
-//       font-size: 0.8rem;
-//     }
-//   }
-// }
-
-//     &:hover {
-//       clip-path: circle(75%);
-//       background: salmon;
-//     }
-
-//     // span {
-//     //   float: right;
-//     //   color: white;
-//     //   font-weight: bold;
-//     //   transition: color 0.5s;
-//     //   position: relative;
-//     //   margin-right: 4%;
-//     // }
-
-//     // &:hover span {
-//     //   color: rgb(255, 255, 255, 0);
-//     // }
-
-//     h1 {
-//       color: white;
-//       font-size: 4rem;
-//     }
-//     p {
-//       color: white;
-//       font-size: 0.8rem;
-//     }
-//   }
-// }
